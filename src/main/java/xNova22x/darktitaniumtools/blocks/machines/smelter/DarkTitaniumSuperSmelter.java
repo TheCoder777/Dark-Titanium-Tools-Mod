@@ -34,48 +34,44 @@ import xNova22x.darktitaniumtools.init.ModItems;
 import xNova22x.darktitaniumtools.util.IHasModel;
 import xNova22x.darktitaniumtools.util.Reference;
 
-public class DarkTitaniumTrippleSmelter extends BlockBase implements ITileEntityProvider {
+public class DarkTitaniumSuperSmelter extends BlockBase implements ITileEntityProvider {
 	// slot 1 = index 0
 	// slot 2 = index 1
-	// slot 3 = index 2
-	// fuel   = index 3
-	// output = index 4
+	// fuel   = index 2
+	// output = index 3
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
 	private static final PropertyBool BURNING = PropertyBool.create("burning");
-	private static boolean keepInventory;
 	
-	public DarkTitaniumTrippleSmelter(String name, boolean isBurning) 
+	public DarkTitaniumSuperSmelter(String name, boolean isBurning) 
 	{
 		super(name, Material.IRON);
-		setUnlocalizedName(name);
-		setRegistryName(name);
 		setHardness(5.0f);
 		setHarvestLevel("pickaxe", 3);
 		setResistance(20.0f);
 		setSoundType(SoundType.METAL);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
 		
-		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		//ModBlocks.BLOCKS.add(this);
+		//ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(ModBlocks.DARK_TITTANIUM_TRIPPLE_SMELTER);
+		return Item.getItemFromBlock(ModBlocks.DARK_TITTANIUM_SUPER_SMELTER);
 	}
 	
 	@Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) 
 	{
-		return new ItemStack(ModBlocks.DARK_TITTANIUM_TRIPPLE_SMELTER);
+		return new ItemStack(ModBlocks.DARK_TITTANIUM_SUPER_SMELTER);
 	}
 	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
 	{
 		if (!worldIn.isRemote) {
-			playerIn.openGui(Main.instance, Reference.GUI_DARK_TITTANIUM_TRIPPLE_SMELTER, worldIn, pos.getX(), pos.getY(), pos.getZ());
+			playerIn.openGui(Main.instance, Reference.GUI_DARK_TITTANIUM_SUPER_SMELTER, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;
 	}
@@ -124,11 +120,11 @@ public class DarkTitaniumTrippleSmelter extends BlockBase implements ITileEntity
 
         if (active)
         {
-            worldIn.setBlockState(pos, ModBlocks.DARK_TITTANIUM_TRIPPLE_SMELTER.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(BURNING, true), 3);
+            worldIn.setBlockState(pos, ModBlocks.DARK_TITTANIUM_SUPER_SMELTER.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(BURNING, true), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, ModBlocks.DARK_TITTANIUM_TRIPPLE_SMELTER.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(BURNING, false), 3);
+            worldIn.setBlockState(pos, ModBlocks.DARK_TITTANIUM_SUPER_SMELTER.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)).withProperty(BURNING, false), 3);
 
         }
 
@@ -142,7 +138,7 @@ public class DarkTitaniumTrippleSmelter extends BlockBase implements ITileEntity
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) 
 	{
-		return new TileEntityDarkTitaniumTrippleSmelter();
+		return new TileEntityDarkTitaniumSuperSmelter();
 	}
 	
 	@Override
@@ -160,7 +156,7 @@ public class DarkTitaniumTrippleSmelter extends BlockBase implements ITileEntity
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) 
 	{
-		TileEntityDarkTitaniumTrippleSmelter tileentity = (TileEntityDarkTitaniumTrippleSmelter)worldIn.getTileEntity(pos);
+		TileEntityDarkTitaniumSuperSmelter tileentity = (TileEntityDarkTitaniumSuperSmelter)worldIn.getTileEntity(pos);
 		InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
 		super.breakBlock(worldIn, pos, state);
 	}
@@ -205,28 +201,5 @@ public class DarkTitaniumTrippleSmelter extends BlockBase implements ITileEntity
 	{
 		return ((EnumFacing)state.getValue(FACING)).getIndex();
 	}
-	
-	
-	
-	@Override
-	public boolean hasComparatorInputOverride(IBlockState state) 
-	{
-		return true;
-	}
-	
-	@Override
-	public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos) 
-	{
-		return Container.calcRedstone(worldIn.getTileEntity(pos));
-	}
-	
-	
-	
-	
-	
-	@Override
-	public BlockRenderLayer getBlockLayer() 
-	{
-		return BlockRenderLayer.CUTOUT;
-	}
+
 }

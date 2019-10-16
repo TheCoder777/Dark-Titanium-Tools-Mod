@@ -39,11 +39,11 @@ tile.magnesium_torch.name=Magnesium Torch
 
 
 // Machines
-tile.dark_titanium_tripple_smelter.name=Dark Titanium Tripple Smelter
+tile.dark_titanium_super_smelter.name=Dark Titanium Super Smelter
 
 
 // Creative Tab (same in all langs)
 itemGroup.dark_titanium_tools_main_tab=Dark Titanium Tools
 
 // Containers (custom names)
-container.dark_titanium_tripple_smelter=Dark Titanium Tripple Smelter
+container.dark_titanium_super_smelter=Dark Titanium Super Smelter

@@ -8,5 +8,5 @@ public class Reference {
 	public static final String CLIENT_PROXY_CLASS = "xNova22x.darktitaniumtools.proxy.ClientProxy";
 	public static final String COMMON_PROXY_CLASS = "xNova22x.darktitaniumtools.proxy.CommonProxy";
 	
-	public static final int GUI_DARK_TITTANIUM_TRIPPLE_SMELTER = 0;
+	public static final int GUI_DARK_TITTANIUM_SUPER_SMELTER = 0;
 }

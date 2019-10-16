@@ -1,0 +1,12 @@
+{
+    "parent": "block/orientable",
+    "textures":{
+        "particle": "darktitaniumtools:blocks/dark_titanium_super_smelter_front_off",
+        "up": "darktitaniumtools:blocks/dark_titanium_super_smelter_back_top_bottom",
+        "down": "darktitaniumtools:blocks/dark_titanium_super_smelter_back_top_bottom",
+        "north": "darktitaniumtools:blocks/dark_titanium_super_smelter_front_on",
+        "east": "darktitaniumtools:blocks/dark_titanium_super_smelter_sides_on",
+        "south": "darktitaniumtools:blocks/dark_titanium_super_smelter_back_top_bottom",
+        "west": "darktitaniumtools:blocks/dark_titanium_super_smelter_sides_on"
+    }
+}

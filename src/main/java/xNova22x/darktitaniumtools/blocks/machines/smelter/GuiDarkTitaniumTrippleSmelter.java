@@ -7,66 +7,57 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
 import xNova22x.darktitaniumtools.util.Reference;
 
-public class GuiDarkTitaniumTrippleSmelter extends GuiContainer{
-	private static final ResourceLocation SILVER_FURNACE_TEXTURE = new ResourceLocation(Reference.MODID + ":textures/gui/silver_furnace.png");
-	private final InventoryPlayer playerInventory;
-	private final IInventory tileFurnace;
+public class GuiDarkTitaniumTrippleSmelter extends GuiContainer {
+	private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MODID + ":textures/gui/dark_titanium_super_smelter_gui.png");
+	private final InventoryPlayer player;
+	private final TileEntityDarkTitaniumSuperSmelter tileentity;
 	
-	public GuiDarkTitaniumTrippleSmelter(InventoryPlayer playerInv, IInventory furnaceInv) 
-	{
-		super(new ContainerDarkTitaniumTrippleSmelter(playerInv, furnaceInv));
-		this.playerInventory = playerInv;
-		this.tileFurnace = furnaceInv;
+	public GuiDarkTitaniumTrippleSmelter(InventoryPlayer player, TileEntityDarkTitaniumSuperSmelter tileentity) {
+		super(new ContainerDarkTitaniumSuperSmelter(player, tileentity));
+		this.player = player;
+		this.tileentity = tileentity;
 	}
 	
 	@Override
-	public void drawScreen(int mouseX, int mouseY, float partialTicks)
-	{
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		this.drawDefaultBackground();
 		super.drawScreen(mouseX, mouseY, partialTicks);
 		this.renderHoveredToolTip(mouseX, mouseY);
 	}
 	
 	@Override
-	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
-	{
-		String s = this.tileFurnace.getDisplayName().getUnformattedText();
+	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		String s = this.tileentity.getDisplayName().getUnformattedText();
 		this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
-		this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(), 8, this.ySize - 96 + 2, 4210752);
+		this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedText(), 122, this.ySize - 96 + 2, 4210752);
 	}
 	
-	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
-    {
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.getTextureManager().bindTexture(SILVER_FURNACE_TEXTURE);
-        int i = (this.width - this.xSize) / 2;
-        int j = (this.height - this.ySize) / 2;
-        this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
+        this.mc.getTextureManager().bindTexture(TEXTURE);
+        this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 
-        if (TileEntityDarkTitaniumTrippleSmelter.isBurning(this.tileFurnace))
-        {
-            int k = this.getBurnLeftScaled(13);
-            this.drawTexturedModalRect(i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
+        if (TileEntityDarkTitaniumSuperSmelter.isBurning(tileentity)) {
+        	int k = this.getBurnLeftScaled(13);
+        	this.drawTexturedModalRect(this.guiLeft + 45, this.guiTop + 38 + 12 - k, 176, 12 - k, 14, k + 1);
         }
-
+        
         int l = this.getCookProgressScaled(24);
-        this.drawTexturedModalRect(i + 79, j + 34, 176, 14, l + 1, 16);
+        this.drawTexturedModalRect(this.guiLeft + 80, this.guiTop + 41, 176, 14, l + 1, 16);
     }
 	
-	private int getCookProgressScaled(int pixels)
-	{
-		int i = this.tileFurnace.getField(2);
-		int j = this.tileFurnace.getField(3);
+	private int getCookProgressScaled(int pixels) {
+		int i = this.tileentity.getField(2);
+		int j = this.tileentity.getField(3);
 		return j != 0 && i != 0 ? i * pixels / j : 0;
 	}
 	
-	private int getBurnLeftScaled(int pixels)
-	{
-		int i = this.tileFurnace.getField(1);
-		if(i == 0)
-		{
+	private int getBurnLeftScaled(int pixels) {
+		int i = this.tileentity.getField(1);
+		if(i == 0) {
 			i = 200;
 		}
-		return this.tileFurnace.getField(0) * pixels / i;
+		return this.tileentity.getField(0) * pixels / i;
 	}
 }

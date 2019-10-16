@@ -11,7 +11,7 @@ import xNova22x.darktitaniumtools.blocks.DarkTitaniumBlock;
 import xNova22x.darktitaniumtools.blocks.DarkTitaniumOre;
 import xNova22x.darktitaniumtools.blocks.MagnesiumOre;
 import xNova22x.darktitaniumtools.blocks.MagnesiumTorch;
-import xNova22x.darktitaniumtools.blocks.machines.smelter.DarkTitaniumTrippleSmelter;
+import xNova22x.darktitaniumtools.blocks.machines.smelter.DarkTitaniumSuperSmelter;
 
 public class ModBlocks {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
@@ -22,9 +22,6 @@ public class ModBlocks {
 	public static final BlockTorch MAGNESIUM_TORCH = new MagnesiumTorch();
 	
 	// Interaction
-	public static final Block DARK_TITTANIUM_TRIPPLE_SMELTER = new DarkTitaniumTrippleSmelter("dark_titanium_tripple_smelter", false);
-	//public static final Block DARK_TITTANIUM_TRIPPLE_SMELTER_OFF = new DarkTitaniumTrippleSmelter("dark_titanium_tripple_smelter", false);
-
-
+	public static final Block DARK_TITTANIUM_SUPER_SMELTER = new DarkTitaniumSuperSmelter("dark_titanium_super_smelter", false);
 
 }

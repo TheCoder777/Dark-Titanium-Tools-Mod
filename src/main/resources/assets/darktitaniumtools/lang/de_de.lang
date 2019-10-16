@@ -39,7 +39,7 @@ tile.magnesium_torch.name=Magnesium Fackel
 
 
 // Machines
-tile.dark_titanium_tripple_smelter.name=Dunkle Dreifach Titanschmelze
+tile.dark_titanium_super_smelter.name=Dunkle Supertitanschmelze
 
 
 // Creative Tab (same in all langs)
@@ -47,4 +47,4 @@ itemGroup.dark_titanium_tools_main_tab=Dark Titanium Tools
 
 
 // Containers (custom names)
-container.dark_titanium_tripple_smelter=Dunkle Dreifach Titanschmelze
+container.dark_titanium_super_smelter=Dunkle Supertitanschmelze

@@ -65,7 +65,6 @@ public class ModItems {
 	// add magnesium dust
 	// add dark titanium dust
 	// add dark titanium sheers
-	// add magnesium Torches (underwater)
 	
 	
 	public static void setRepairMaterials() {

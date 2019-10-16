@@ -35,13 +35,13 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import xNova22x.darktitaniumtools.blocks.machines.smelter.slots.DarkTitaniumTrippleFurnaceSlotFuel;
+import xNova22x.darktitaniumtools.blocks.machines.smelter.slots.SlotDarkTitaniumSuperSmelterFuel;
 import xNova22x.darktitaniumtools.init.ModBlocks;
 import xNova22x.darktitaniumtools.init.ModItems;
 
-public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements IInventory, ITickable{
+public class TileEntityDarkTitaniumSuperSmelter extends TileEntity implements IInventory, ITickable{
 	
-	private NonNullList<ItemStack> inv = NonNullList.<ItemStack>withSize(5, ItemStack.EMPTY);
+	private NonNullList<ItemStack> inv = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	private String customName;
 
 	private int burnTime;
@@ -51,15 +51,14 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
 	
 	private static int slot0 = 0;
 	private static int slot1 = 1;
-	private static int slot2 = 2;
-	private static int fuelSlot = 3;
-	private static int outputSlot = 4;
+	private static int fuelSlot = 2;
+	private static int outputSlot = 3;
 	
 	
 	@Override
 	public String getName() 
 	{
-		return this.hasCustomName() ? this.customName : "container.dark_titanium_tripple_smelter";
+		return this.hasCustomName() ? this.customName : "container.dark_titanium_super_smelter";
 	}
 	
 	@Override
@@ -129,17 +128,15 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
 		if (stack.getCount() > this.getInventoryStackLimit()) {
 			stack.setCount(this.getInventoryStackLimit());
 		}
-		if(index == 0 && index + slot1 == 1 && index + slot2 == 2 && !flag)
+		if(index == 0 && index + slot1 == 1 && !flag)
 			// slot 1 = index 0
 			// slot 2 = index 1
-			// slot 3 = index 2
-			// fuel   = index 3
-			// output = index 4
+			// fuel   = index 2
+			// output = index 3
 		{
 			ItemStack stack1 = (ItemStack)this.inv.get(index + slot1);
-			ItemStack stack2 = (ItemStack)this.inv.get(index + slot2);
 
-			this.totalCookTime = this.getCookTime(stack, stack1, stack2);
+			this.totalCookTime = this.getCookTime(stack, stack1);
 			this.cookTime = 0;
 			this.markDirty();
 		}
@@ -213,10 +210,9 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
             ItemStack fuel = this.inv.get(fuelSlot);
             ItemStack Itemslot0 = this.inv.get(slot0);
             ItemStack Itemslot1 = this.inv.get(slot1);
-            ItemStack Itemslot2 = this.inv.get(slot2);
 
 
-            if (this.isBurning() || !fuel.isEmpty() && !Itemslot0.isEmpty() || !Itemslot1.isEmpty() || !Itemslot2.isEmpty())
+            if (this.isBurning() || !fuel.isEmpty() && !Itemslot0.isEmpty() || Itemslot1.isEmpty())
             {
                 if (!this.isBurning() && this.canSmelt())
                 {
@@ -248,7 +244,7 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
                     if (this.cookTime == this.totalCookTime)
                     {
                         this.cookTime = 0;
-                        this.totalCookTime = this.getCookTime(this.inv.get(slot0));
+                        this.totalCookTime = this.getCookTime(Itemslot0, Itemslot1);
                         this.smeltItem();
                         flag1 = true;
                     }
@@ -266,7 +262,7 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
             if (flag != this.isBurning())
             {
                 flag1 = true;
-                DarkTitaniumTrippleSmelter.setState(this.isBurning(), this.world, this.pos);
+                DarkTitaniumSuperSmelter.setState(this.isBurning(), this.world, this.pos);
             }
         }
 
@@ -276,18 +272,18 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
         }
     }
     
-    public int getCookTime(ItemStack stack0, ItemStack stack1, ItemStack stack2)
+    public int getCookTime(ItemStack stack0, ItemStack stack1)
     {
-    	return 300;
+    	return 200;
     }
     
     private boolean canSmelt()
     {
-        if (((ItemStack)this.inv.get(slot0)).isEmpty() || ((ItemStack)this.inv.get(slot1)).isEmpty() || ((ItemStack)this.inv.get(slot2)).isEmpty()) {
+        if (((ItemStack)this.inv.get(slot0)).isEmpty() || ((ItemStack)this.inv.get(slot1)).isEmpty()) {
             return false;
         }
         else {
-        	ItemStack result = DarkTitaniumTrippleSmelterRecipes.getInstance().getSmeltResult((ItemStack)this.inv.get(slot0), (ItemStack)this.inv.get(slot1), (ItemStack)this.inv.get(slot2));
+        	ItemStack result = DarkTitaniumSuperSmelterRecipes.getInstance().getSmeltingResult((ItemStack)this.inv.get(slot0), (ItemStack)this.inv.get(slot1));
         	if (result.isEmpty()) return false;
         	else {
         		ItemStack output = (ItemStack)this.inv.get(outputSlot);
@@ -306,9 +302,8 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
         {
             ItemStack input0 = this.inv.get(slot0);
             ItemStack input1 = this.inv.get(slot1);
-            ItemStack input2 = this.inv.get(slot2);
 
-            ItemStack result = DarkTitaniumTrippleSmelterRecipes.getInstance().getCookingResult(input0, input1, input2);
+            ItemStack result = DarkTitaniumSuperSmelterRecipes.getInstance().getSmeltingResult(input0, input1);
             ItemStack output = this.inv.get(outputSlot);
             
             if (output.isEmpty()) this.inv.set(outputSlot, result.copy());
@@ -316,7 +311,6 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
             
             if (!input0.isEmpty()) input0.shrink(1);
             if (!input1.isEmpty()) input1.shrink(1);
-            if (!input2.isEmpty()) input2.shrink(1);
         }
     }
     
@@ -376,7 +370,7 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
     	{
     		return false;
     	}
-    	else if(index != slot2)
+    	else if(index != fuelSlot)
     	{
     		return true;
     	}
@@ -386,12 +380,9 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
     	}
     }
     
-    
-    
-    
     public String getGuiID() 
     {
-    	return "darktitaniumtools:darktitaniumtripplesmelter";
+    	return "darktitaniumtools:dark_titanium_super_smelter";
     }
     
     public int getField(int id)
@@ -432,7 +423,7 @@ public class TileEntityDarkTitaniumTrippleSmelter extends TileEntity implements 
     @Override
     public int getFieldCount() 
     {
-    	return 5;
+    	return 4;
     }
     
     @Override

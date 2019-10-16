@@ -1,12 +1,16 @@
 package xNova22x.darktitaniumtools;
 
+import java.util.Random;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -16,13 +20,8 @@ import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import java.util.Random;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import xNova22x.darktitaniumtools.blocks.MagnesiumOre;
 import xNova22x.darktitaniumtools.init.ModItems;
 import xNova22x.darktitaniumtools.init.Smelting;
@@ -31,6 +30,7 @@ import xNova22x.darktitaniumtools.proxy.CommonProxy;
 import xNova22x.darktitaniumtools.tabs.DarkTitaniumToolsTab;
 import xNova22x.darktitaniumtools.util.Reference;
 import xNova22x.darktitaniumtools.util.compat.OreDictionaryCompat;
+import xNova22x.darktitaniumtools.util.handler.GuiHandler;
 import xNova22x.darktitaniumtools.world.ModWorldGen;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
@@ -66,13 +66,12 @@ public class Main {
 		Smelting.init();
 		OreDictionaryCompat.registerOres();
 		MinecraftForge.EVENT_BUS.register(new LootHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+
 	}
 	
 	@EventHandler
-	public static void Postinit(FMLPostInitializationEvent event)
-	{
-		
-	}
+	public static void Postinit(FMLPostInitializationEvent event) {}
 	
 	@EventHandler
 	public static void loadComplete(FMLLoadCompleteEvent event) {
