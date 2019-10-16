@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0":"darktitaniumtools:items/dark_titanium_pickaxe"
+    }
+}

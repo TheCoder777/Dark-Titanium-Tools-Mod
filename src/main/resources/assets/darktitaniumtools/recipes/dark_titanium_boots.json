@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "   ",
+        "T T",
+        "T T"
+    ],
+   
+    "key":
+    {
+        "T":
+        {
+            "item": "darktitaniumtools:dark_titanium_ingot"
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:dark_titanium_boots",
+        "count": 1
+    }
+}

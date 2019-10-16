@@ -1,0 +1,6 @@
+{
+    "parent": "block/torch",
+    "textures":{
+        "torch": "darktitaniumtools:blocks/magnesium_torch"
+    }
+}

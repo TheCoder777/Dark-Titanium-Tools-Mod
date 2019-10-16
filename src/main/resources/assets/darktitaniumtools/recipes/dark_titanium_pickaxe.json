@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "TTT",
+        " R ",
+        " R "
+    ],
+   
+    "key":
+    {
+        "T":
+        {
+            "item": "darktitaniumtools:dark_titanium_ingot"
+        },
+        
+        "R":
+        {
+            "item": "darktitaniumtools:dark_titanium_rod"
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:dark_titanium_pickaxe",
+        "count": 1
+    }
+}

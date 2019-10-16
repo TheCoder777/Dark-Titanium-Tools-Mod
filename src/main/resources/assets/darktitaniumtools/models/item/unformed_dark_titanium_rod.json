@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0":"darktitaniumtools:items/unformed_dark_titanium_rod"
+    }
+}

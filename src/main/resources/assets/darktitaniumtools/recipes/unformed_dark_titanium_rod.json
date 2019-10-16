@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        " R ",
+        "RTR",
+        " R "
+    ],
+   
+    "key":
+    {
+        "T":
+        {
+            "item": "darktitaniumtools:dark_titanium_mass"
+        },
+        
+        "R":
+        {
+            "item": "darktitaniumtools:stone_rod"
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:unformed_dark_titanium_rod",
+        "count": 2
+    }
+}

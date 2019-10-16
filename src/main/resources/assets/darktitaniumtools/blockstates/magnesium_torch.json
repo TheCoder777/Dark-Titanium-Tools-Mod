@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "facing=up": {
+            "model": "darktitaniumtools:magnesium_torch_normal"
+        },
+        "facing=east": {
+            "model": "darktitaniumtools:magnesium_torch_wall"
+        },
+        "facing=south": {
+            "model": "darktitaniumtools:magnesium_torch_wall",
+            "y": 90
+        },
+        "facing=west": {
+            "model": "darktitaniumtools:magnesium_torch_wall",
+            "y": 180
+        },
+        "facing=north": {
+            "model": "darktitaniumtools:magnesium_torch_wall",
+            "y": 270
+        }
+    }
+}

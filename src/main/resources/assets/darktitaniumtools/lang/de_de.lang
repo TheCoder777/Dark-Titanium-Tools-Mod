@@ -1,0 +1,50 @@
+
+// Items
+item.raw_dark_titanium.name=Rohes Dunkles Titan
+item.impure_dark_titanium.name=Unreines Dunkles Titan
+item.dark_titanium_ingot.name=Dunkler Titan Barren
+item.dark_titanium_mass.name=Dunkle Titan Masse
+item.unformed_dark_titanium_rod.name=Ungeformter Dunkler Titan Stab
+item.dark_titanium_rod.name=Dunkler Titan Stab
+item.dark_titanium_nugget.name=Dunkle Titanklumpen
+item.magnesium_shard.name=Magnesium Scherbe
+item.magnesium_crystal.name=Magnesium Kristall
+item.compressed_magnesium_crystal.name=Komprimierter Magnesium Kristall
+item.stone_rod.name=Stein Stab
+
+
+// Tools
+item.dark_titanium_sword.name=Dunkles Titan Schwert
+item.dark_titanium_pickaxe.name=Dunkle Titanium Spitzhacke
+item.dark_titanium_axe.name=Dunkle Titan Axt
+item.dark_titanium_hoe.name=Dunkle Titan Hacke
+item.dark_titanium_shovel.name=Dunkle Titan Schaufel
+
+
+// Armour
+item.dark_titanium_helmet.name=Dunkler Titan Helm
+item.dark_titanium_chestplate.name=Dunkle Titan Brustplatte
+item.dark_titanium_leggings.name=Dunkle Titan Hose
+item.dark_titanium_boots.name=Dunkle Titan Schuhe
+
+
+// Blocks
+tile.dark_titanium_block.name=Dunkler Titan Block
+tile.dark_titanium_ore.name=Dunkles Titan Erz
+tile.magnesium_ore.name=Magnesium Erz
+
+
+// ""Blocks""
+tile.magnesium_torch.name=Magnesium Fackel
+
+
+// Machines
+tile.dark_titanium_tripple_smelter.name=Dunkle Dreifach Titanschmelze
+
+
+// Creative Tab (same in all langs)
+itemGroup.dark_titanium_tools_main_tab=Dark Titanium Tools
+
+
+// Containers (custom names)
+container.dark_titanium_tripple_smelter=Dunkle Dreifach Titanschmelze

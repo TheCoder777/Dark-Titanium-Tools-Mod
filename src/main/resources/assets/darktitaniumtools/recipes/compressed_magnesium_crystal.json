@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "MM",
+        "MM"
+    ],
+   
+    "key":
+    {
+        "M":
+        {
+            "item": "darktitaniumtools:magnesium_crystal"
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:compressed_magnesium_crystal",
+        "count": 1
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "M",
+        "R"
+    ],
+   
+    "key":
+    {
+        "M":
+        {
+            "item": "darktitaniumtools:magnesium_crystal"
+        },
+        "R":
+        {
+            "item": "darktitaniumtools:stone_rod"
+        }
+        
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:magnesium_torch",
+        "count": 4
+    }
+}

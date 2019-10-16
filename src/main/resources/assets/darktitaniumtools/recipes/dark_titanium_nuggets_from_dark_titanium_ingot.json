@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "darktitaniumtools:dark_titanium_ingot"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "darktitaniumtools:dark_titanium_nugget",
+        "count": 9
+    }
+}

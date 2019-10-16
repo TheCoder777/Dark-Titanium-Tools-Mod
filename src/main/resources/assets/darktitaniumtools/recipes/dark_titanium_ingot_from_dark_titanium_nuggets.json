@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "TTT",
+        "TTT",
+        "TTT"
+    ],
+   
+    "key":
+    {
+        "T":
+        {
+            "item": "darktitaniumtools:dark_titanium_nugget"
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:dark_titanium_ingot",
+        "count": 1
+    }
+}

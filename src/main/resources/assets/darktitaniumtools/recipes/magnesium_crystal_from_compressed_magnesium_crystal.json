@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "darktitaniumtools:compressed_magnesium_crystal"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "darktitaniumtools:magnesium_crystal",
+        "count": 4
+    }
+}

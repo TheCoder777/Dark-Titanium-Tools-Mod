@@ -1,0 +1,144 @@
+{
+    "pools": [
+        {
+            "name": "darktitaniumtools",
+            "rolls": {
+                "min": 1,
+                "max": 3
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:stone_rod",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 3,
+                                "max": 12
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:magnesium_shard",
+                    "weight": 15,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:magnesium_crystal",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:raw_dark_titanium",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_nugget",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 7
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_rod",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_boots",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.001,
+                                "max": 0.003
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_sword",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.001,
+                                "max": 0.002
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 44
+                }
+                
+            ]
+        }
+    ]
+}

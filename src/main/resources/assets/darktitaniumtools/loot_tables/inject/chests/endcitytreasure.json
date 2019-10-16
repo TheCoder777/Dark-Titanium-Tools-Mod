@@ -1,0 +1,207 @@
+{
+    "pools": [
+        {
+            "name": "darktitaniumtools",
+            "rolls": {
+                "min": 1,
+                "max": 5
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:magnesium_crystal",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_ingot",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_helmet",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.8,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Kings Helmet\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_chestplate",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.8,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Heros Chestplate\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_leggings",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.8,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Legends Leggings\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_boots",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.8,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"Really Cool Walkers\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_pickaxe",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.95,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Ultimate Picker\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_axe",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.95,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Ultimate AXE\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "darktitaniumtools:dark_titanium_sword",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_damage",
+                            "damage": {
+                                "min": 0.95,
+                                "max": 0.6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{display:{Name:\"The Ultimate Destroyer\"}}"
+                        },
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "treasure": true,
+                            "levels": 20
+                        }
+                    ]
+                },
+                {
+                    "type": "empty",
+                    "weight": 10
+                }
+                
+            ]
+        }
+    ]
+}

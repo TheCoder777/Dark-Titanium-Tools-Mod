@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shaped",
+   
+    "pattern":
+    [
+        "T M",
+        " C ",
+        "M T"
+    ],
+   
+    "key":
+    {
+        "T":
+        {
+            "item": "darktitaniumtools:raw_dark_titanium"
+        },
+        
+        "M":
+        {
+            "item": "darktitaniumtools:magnesium_crystal"
+        },
+        
+        "C":
+        {
+            "item": "minecraft:coal",
+            "data": 0
+        }
+    },
+   
+    "result":
+    {
+        "item": "darktitaniumtools:dark_titanium_mass",
+        "count": 1
+    }
+}

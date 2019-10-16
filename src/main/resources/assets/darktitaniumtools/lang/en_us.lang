@@ -1,0 +1,49 @@
+
+// Items
+item.raw_dark_titanium.name=Raw Dark Titanium
+item.impure_dark_titanium.name=Impure Dark Titanium
+item.dark_titanium_ingot.name=Dark Titanium Ingot
+item.dark_titanium_mass.name=Dark Titanium Mass
+item.unformed_dark_titanium_rod.name=Unformed Dark Titanium Rod
+item.dark_titanium_rod.name=Dark Titanium Rod
+item.dark_titanium_nugget.name=Dark Titanium Nugget
+item.magnesium_shard.name=Magnesium Shard
+item.magnesium_crystal.name=Magnesium Crystal
+item.compressed_magnesium_crystal.name=Compressed Magnesium Crystal
+item.stone_rod.name=Stone Rod
+
+
+// Tools
+item.dark_titanium_sword.name=Dark Titanium Sword
+item.dark_titanium_pickaxe.name=Dark Titanium Pickaxe
+item.dark_titanium_axe.name=Dark Titanium Axe
+item.dark_titanium_hoe.name=Dark Titanium Hoe
+item.dark_titanium_shovel.name=Dark Titanium Shovel
+
+
+// Armour
+item.dark_titanium_helmet.name=Dark Titanium Helmet
+item.dark_titanium_chestplate.name=Dark Titanium Chestplate
+item.dark_titanium_leggings.name=Dark Titanium Leggings
+item.dark_titanium_boots.name=Dark Titanium Boots
+
+
+// Blocks
+tile.dark_titanium_block.name=Dark Titanium Block
+tile.dark_titanium_ore.name=Dark Titanium Ore
+tile.magnesium_ore.name=Magnesium Ore
+
+
+// ""Blocks""
+tile.magnesium_torch.name=Magnesium Torch
+
+
+// Machines
+tile.dark_titanium_tripple_smelter.name=Dark Titanium Tripple Smelter
+
+
+// Creative Tab (same in all langs)
+itemGroup.dark_titanium_tools_main_tab=Dark Titanium Tools
+
+// Containers (custom names)
+container.dark_titanium_tripple_smelter=Dark Titanium Tripple Smelter
